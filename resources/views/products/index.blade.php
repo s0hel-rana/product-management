@@ -11,7 +11,7 @@
         <form action="" method="get" class="card-header">
             <div class="form-row justify-content-between">
                 <div class="col-md-2">
-                    <input type="text" name="title" placeholder="Product Title" class="form-control">
+                    <input type="text" name="keyword" placeholder="Product Title" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <select name="variant" id="" class="form-control">
@@ -42,7 +42,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Variant</th>
@@ -51,11 +51,12 @@
                     </thead>
 
                     <tbody>
-
+                        @foreach ($products as $product)
                     <tr>
-                        <td>1</td>
-                        <td>T-Shirt <br> Created at : 25-Aug-2020</td>
-                        <td>Quality product in low cost</td>
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->title }}</td>
+                        <td>{{ $product->sku }}</td>
+                        <td>{{ $product->description }}</td>
                         <td>
                             <dl class="row mb-0" style="height: 80px; overflow: hidden" id="variant">
 
@@ -73,10 +74,11 @@
                         </td>
                         <td>
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('product.edit', 1) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-success">Edit</a>
                             </div>
                         </td>
                     </tr>
+                    @endforeach
 
                     </tbody>
 
@@ -88,10 +90,16 @@
         <div class="card-footer">
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <p>Showing 1 to 10 out of 100</p>
+                    @if(!$searching)
+                        <p>Showing {{ (($products->currentPage() - 1) * $perPage) + 1 }} to  {{  (($products->currentPage() - 1) * $perPage) + count($products) }} out of {{ $total }}</p>
+                    @else
+                        <p>Total : <strong>{{ count($products) }}</strong> products found according to search. </p>
+                    @endif
                 </div>
                 <div class="col-md-2">
-
+                    @if(!$searching)
+                        {{ $products->links() }}
+                    @endif
                 </div>
             </div>
         </div>

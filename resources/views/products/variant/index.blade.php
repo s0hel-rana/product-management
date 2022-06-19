@@ -9,7 +9,7 @@
         <div class="card-header py-3">
             <div class="form-row">
                 <div class="col-md-3">
-                    <input type="text" placeholder="Serch" class="form-control">
+                    <input type="text" name="keyword" placeholder="Serch" class="form-control">
                 </div>
                 <div class="col-md-1">
                     <button class="btn btn-primary">Search</button>
@@ -28,14 +28,6 @@
 
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                    </tfoot>
                     <tbody>
                     @foreach($variants as $key=>$variant)
                         <tr>
