@@ -1,0 +1,25 @@
+Product Management – Coding Test Release Note
+
+- Technology:
+	- Laravel
+	- Composer
+	- PHP
+	- MySQL
+
+` Released Feature:
+
+	- Fetching available products from database.
+	- Listing products in UI dynamically.
+	- Adding pagination.
+	- Showing data summury based on pagination.
+	- Products filtering based on `Product Title`.
+	- Products can be added with title, sku, description.
+	- After adding, page will be redirected to Products list page.
+
+- Known issue and improvements:
+	- Filtering parameters considered as GET request.
+	- No constant file used for static data. i.e. $perPage
+
+- Difficulties:
+	- No experience in Vue JS framework.
+	- Understanding relationships of Products, Varients, Varient Prices.
