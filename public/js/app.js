@@ -50482,9 +50482,7 @@ var render = function() {
         _c("div", { staticClass: "card shadow mb-4" }, [
           _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Product Name Update")
-              ]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Product Name")]),
               _vm._v(" "),
               _c("input", {
                 directives: [

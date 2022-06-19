@@ -5,7 +5,7 @@
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="">Product Name Update</label>
+                            <label for="">Product Name</label>
                             <input type="text" v-model="product_name" placeholder="Product Name" class="form-control">
                         </div>
                         <div class="form-group">
